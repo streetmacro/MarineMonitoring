@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply m-0 p-0 bg-gray-50 text-gray-900 antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  }
+}
+
+@layer components {
+  .leaflet-container {
+    @apply w-full h-full bg-gray-100;
+  }
+
+  .leaflet-top.leaflet-left .leaflet-control-zoom {
+    position: fixed !important;
+    right: 20px !important;
+    left: auto !important;
+    top: 80px !important;
+    margin-left: 0 !important;
+  }
+
+  .berth-marker {
+    @apply transition-transform duration-200;
+  }
+
+  .berth-marker:hover {
+    @apply scale-110;
+  }
+
+  .berth-popup .leaflet-popup-content-wrapper {
+    @apply bg-white rounded-lg shadow-xl p-0 overflow-hidden;
+  }
+
+  .berth-popup .leaflet-popup-content {
+    @apply m-0 p-4;
+  }
+
+  .berth-popup .leaflet-popup-tip {
+    @apply bg-white;
+  }
+
+  .status-btn {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 border-2;
+  }
+
+  .status-btn.active {
+    @apply ring-2 ring-offset-2;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
